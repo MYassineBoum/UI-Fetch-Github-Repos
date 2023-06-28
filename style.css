@@ -10,6 +10,12 @@ body{
     align-items: center;
     justify-content: center;
 }
+.box label{
+    color: #023047; font-weight: bold; font-size: 30px; padding: 10px; transition: .2s;
+}
+.box label:hover{
+    color: #2a9d8f; padding-left: 30px;
+}
 .main{
     background-color: #dda15e;
     height: 100px;

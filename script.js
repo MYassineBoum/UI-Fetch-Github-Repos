@@ -4,13 +4,34 @@ let content = document.querySelector(".content");
 let h2Text = document.getElementById("h2Text");
 
 grab.addEventListener("click", function() {
- 
-    h2Text.remove();
-    content.innerHTML = "";
+
+    if(input.value != ""){
+
+        h2Text.remove();
+        content.innerHTML = "";
+
+    } else {
+
+        alert("Entre a username!");
+        return;
+
+    }
+    
 
     fetch(`https://api.github.com/users/${input.value}/repos`)
 
-    .then((response) => response.json())
+    .then((response) => {
+
+        //quick check
+        if (!response.ok) {
+
+            throw new Error("Request failed. Username not found or owns no repositories!");
+
+        }
+        
+        return response.json();
+
+    })
 
     .then((repositories) => {
 
@@ -28,9 +49,13 @@ grab.addEventListener("click", function() {
             url.href = repository.html_url;
 
             let titleText = document.createTextNode(`Name: ${repository.name}`);
+
             let descriptionText = document.createTextNode(`Description: ${repository.description}`);
+
             let starsText = document.createTextNode(`Stars: ${repository.stargazers_count}`);
+
             let watchersText = document.createTextNode(`Watchers: ${repository.watchers_count}`);
+
 
             title.appendChild(titleText);
             description.appendChild(descriptionText);
@@ -53,12 +78,15 @@ grab.addEventListener("click", function() {
 
         });
 
-    });
+    })
 
-    if(response == null){
-        alert("Error!");
-    }
+    .catch((error) => {
+
+        alert(error.message);
+
+    });
 
     input.value = "";
     content.innerHTML = "";
+
 });
