@@ -15,4 +15,8 @@ A simple UI for interacting with different GitHub repositories by simply entring
 ![image](https://github.com/MYassineBoum/UI-Fetch-Github-Repos/assets/115194839/32fa8b4a-ec68-4d68-905c-2ae7b5fd3ff4)
 <br>
 ![image](https://github.com/MYassineBoum/UI-Fetch-Github-Repos/assets/115194839/f7f8d83f-44f7-49c0-821c-0b5fcc2339bf)
-
+<br><br><br>
+## Clone the project:
+```
+https://github.com/MYassineBoum/UI-Fetch-Github-Repos.git
+```
