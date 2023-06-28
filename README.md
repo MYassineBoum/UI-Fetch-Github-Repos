@@ -20,3 +20,6 @@ A simple UI for interacting with different GitHub repositories by simply entring
 ```
 https://github.com/MYassineBoum/UI-Fetch-Github-Repos.git
 ```
+<br><br><br>
+# Credits:
+<h1 style="color:red;">MYassineBoum</h2>
